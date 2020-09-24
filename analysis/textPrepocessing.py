@@ -1,5 +1,5 @@
 from siteParser import parsed
-# import string
+import string
 import nltk
 import re
 from nltk.corpus import stopwords
@@ -10,8 +10,8 @@ from nltk.tokenize import sent_tokenize
 # lemmatizer = WordNetLemmatizer()
 stop_words = list(set(stopwords.words('english')))
 
-pos_train = open('../posimdb.txt', encoding='utf-8').read()
-neg_train = open('../negimdb.txt', encoding='utf-8').read()
+pos_train = open('texts/posimdb.txt', encoding='utf-8').read()
+neg_train = open('texts/negimdb.txt', encoding='utf-8').read()
 parsed_text = parsed
 
 # removing punctuation with regex

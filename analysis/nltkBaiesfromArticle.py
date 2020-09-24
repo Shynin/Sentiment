@@ -3,7 +3,7 @@ import nltk
 from nltk.corpus import movie_reviews
 import random
 
-from siteParser import text
+from siteParser import parsed as text
 
 documents = [(list(movie_reviews.words(fileid)), category)
              for category in movie_reviews.categories()
@@ -32,11 +32,11 @@ train_set, test_set = featuresets[100:], featuresets[:100]
 print(train_set)
 print("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(test_set)
-# classifier = nltk.NaiveBayesClassifier.train(train_set)
+classifier = nltk.NaiveBayesClassifier.train(train_set)
 
 # Test the classifier
-# print(nltk.classify.accuracy(classifier, test_set))
-# print(nltk.classify.accuracy(classifier, text))
+print(nltk.classify.accuracy(classifier, test_set))
+print(nltk.classify.accuracy(classifier, text))
 
 # Show the most important features as interpreted by Naive Bayes
 # classifier.show_most_informative_features(5)
